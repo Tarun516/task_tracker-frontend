@@ -22,7 +22,6 @@ import { ref } from "vue";
 import axios from "axios";
 import { useStore } from "vuex";
 import { useRouter } from "vue-router";
-
 export default {
   name: "Signup",
   setup() {
@@ -35,17 +34,14 @@ export default {
     const router = useRouter();
     const error = ref(""); // Use ref for error message
     const successMessage = ref(""); // Use ref for success message
-
     const submit = async () => {
       try {
         const response = await axios.post(
-          "https://tasktrackerbackend-production-01f5.up.railway.app/auth/signup",
+          "http://localhost:3000/auth/signup",
           data.value // Access the value of ref
         );
-
         // Display success message
         successMessage.value = "Sign up successful! Please login.";
-
         // Optionally clear form fields
         data.value.name = "";
         data.value.email = "";
@@ -59,7 +55,6 @@ export default {
         }
       }
     };
-
     return {
       data,
       submit,
@@ -80,19 +75,16 @@ div {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
-
 form {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 h3 {
   font-size: 24px;
   color: #ebf924;
   margin-bottom: 20px;
 }
-
 input {
   padding: 10px;
   font-size: 16px;
@@ -100,7 +92,6 @@ input {
   border: 1px solid #ccc;
   border-radius: 4px;
 }
-
 button {
   padding: 10px;
   font-size: 16px;
@@ -110,11 +101,9 @@ button {
   border-radius: 4px;
   cursor: pointer;
 }
-
 button:hover {
   background-color: #165a19;
 }
-
 p {
   color: red;
   margin-top: 10px;
