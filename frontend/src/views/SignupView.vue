@@ -39,7 +39,7 @@ export default {
     const submit = async () => {
       try {
         const response = await axios.post(
-          "http://localhost:3000/auth/signup",
+          "http://tasktrackerbackend-production-01f5.up.railway.app/auth/signup",
           data.value // Access the value of ref
         );
 
