@@ -7,7 +7,7 @@ const state = {
 const actions = {
   async fetchTasks({ commit }, token) {
     try {
-      const response = await axios.get("http://tasktrackerbackend-production-01f5.up.railway.app/task", {
+      const response = await axios.get("https://tasktrackerbackend-production-01f5.up.railway.app/task", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -23,7 +23,7 @@ const actions = {
     console.log(token);
     console.log(name);
     const response = await axios.post(
-      "http://tasktrackerbackend-production-01f5.up.railway.app/task",
+      "https://tasktrackerbackend-production-01f5.up.railway.app/task",
       {
         name,
       },
@@ -40,7 +40,7 @@ const actions = {
   async updateTasks({ commit }, { taskId, token }) {
     try {
       const response = await axios.patch(
-        `http://tasktrackerbackend-production-01f5.up.railway.app/task/${taskId}`,
+        `https://tasktrackerbackend-production-01f5.up.railway.app/task/${taskId}`,
         {},
         {
           headers: {
